@@ -91,7 +91,6 @@ export class LinkedList {
     let prev = null;
     let current = this.root;
     let counter = 0;
-
     while (counter < index) {
       prev = current;
       current = current.next;
@@ -100,5 +99,16 @@ export class LinkedList {
     prev.next = new Node(value, current);
   }
 
-  removeAt(index) {}
+  removeAt(index) {
+    if (index > this.size() - 1) return;
+    let prev = null;
+    let current = this.root;
+    let counter = 0;
+    while (counter < index) {
+      prev = current;
+      current = current.next;
+      counter++;
+    }
+    prev.next = current.next;
+  }
 }

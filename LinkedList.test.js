@@ -84,4 +84,16 @@ describe('Linked list methods', () => {
       '( 1 ) -> ( 2 ) -> ( 3 ) -> ( 4 ) -> ( 5 ) -> null'
     );
   });
+
+  test('removeAt (valid input)', () => {
+    list.removeAt(1);
+    expect(list.toString()).toBe('( 1 ) -> ( 3 ) -> ( 4 ) -> ( 5 ) -> null');
+  });
+
+  test('removeAt (invalid input)', () => {
+    list.removeAt(5);
+    expect(list.toString()).toBe(
+      '( 1 ) -> ( 2 ) -> ( 3 ) -> ( 4 ) -> ( 5 ) -> null'
+    );
+  });
 });
