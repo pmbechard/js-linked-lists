@@ -54,4 +54,12 @@ describe('Linked list methods', () => {
     expect(list.pop().value).toBe(5);
     expect(list.toString()).toBe('( 1 ) -> ( 2 ) -> ( 3 ) -> ( 4 ) -> null');
   });
+
+  test('contains (true result)', () => {
+    expect(list.contains(3)).toBe(true);
+  });
+
+  test('contains (false result)', () => {
+    expect(list.contains(6)).toBe(false);
+  });
 });
