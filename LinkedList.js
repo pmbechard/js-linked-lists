@@ -1,3 +1,5 @@
+import { Node } from './Node';
+
 export class LinkedList {
   constructor(root) {
     this.root = root;
@@ -84,6 +86,19 @@ export class LinkedList {
     return result + 'null';
   }
 
-  insertAt(value, index) {}
+  insertAt(value, index) {
+    if (index > this.size() - 1) return;
+    let prev = null;
+    let current = this.root;
+    let counter = 0;
+
+    while (counter < index) {
+      prev = current;
+      current = current.next;
+      counter++;
+    }
+    prev.next = new Node(value, current);
+  }
+
   removeAt(index) {}
 }

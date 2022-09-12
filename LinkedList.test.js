@@ -70,4 +70,18 @@ describe('Linked list methods', () => {
   test('find (value not in list)', () => {
     expect(list.find(0)).toBe(null);
   });
+
+  test('insertAt (valid input)', () => {
+    list.insertAt(2.5, 2);
+    expect(list.toString()).toBe(
+      '( 1 ) -> ( 2 ) -> ( 2.5 ) -> ( 3 ) -> ( 4 ) -> ( 5 ) -> null'
+    );
+  });
+
+  test('insertAt (invalid input)', () => {
+    list.insertAt(2.5, 5);
+    expect(list.toString()).toBe(
+      '( 1 ) -> ( 2 ) -> ( 3 ) -> ( 4 ) -> ( 5 ) -> null'
+    );
+  });
 });
