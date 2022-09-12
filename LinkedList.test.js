@@ -49,4 +49,9 @@ describe('Linked list methods', () => {
   test('at (invalid index)', () => {
     expect(list.at(5)).toBe(null);
   });
+
+  test('pop', () => {
+    expect(list.pop().value).toBe(5);
+    expect(list.toString()).toBe('( 1 ) -> ( 2 ) -> ( 3 ) -> ( 4 ) -> null');
+  });
 });

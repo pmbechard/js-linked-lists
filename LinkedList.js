@@ -46,7 +46,14 @@ export class LinkedList {
     return null;
   }
 
-  pop() {}
+  pop() {
+    let node = { ...this.root };
+    while (node.next.next) node = node.next;
+    let result = { ...node.next };
+    node.next = null;
+    return result;
+  }
+
   contains(value) {}
   find(value) {}
 
