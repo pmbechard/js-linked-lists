@@ -63,7 +63,16 @@ export class LinkedList {
     return false;
   }
 
-  find(value) {}
+  find(value) {
+    let node = { ...this.root };
+    let counter = 0;
+    while (node.next) {
+      if (node.value === value) return counter;
+      counter++;
+      node = node.next;
+    }
+    return null;
+  }
 
   toString() {
     let node = { ...this.root };

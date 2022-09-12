@@ -62,4 +62,12 @@ describe('Linked list methods', () => {
   test('contains (false result)', () => {
     expect(list.contains(6)).toBe(false);
   });
+
+  test('find (value in list)', () => {
+    expect(list.find(4)).toBe(3);
+  });
+
+  test('find (value not in list)', () => {
+    expect(list.find(0)).toBe(null);
+  });
 });
